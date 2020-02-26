@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Background from '../components/Background'
 import Sidebar from '../components/Sidebar'
-import '../styles/reset.sass'
+import '../styles/index.sass'
 // import Img from 'gatsby-image'
 
 const IndexPage = ({ data }) => console.log({ data }) || (
