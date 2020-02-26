@@ -8,8 +8,8 @@ const Logo = ({ logo }) => console.log({ logo }) || (
         query LogoQuery {
             logo: datoCmsLogo {
               logo {
-                fluid(maxWidth: 100) {
-                  ...GatsbyDatoCmsFluid
+                fixed(width: 60) {
+                  ...GatsbyDatoCmsFixed
                 }
               }
             }
@@ -18,7 +18,7 @@ const Logo = ({ logo }) => console.log({ logo }) || (
            
         `}
           render={({ logo }) => (
-                <Img style={{ marginBottom: '20px'}} fluid={logo.logo.fluid} />
+                <Img style={{ marginBottom: '20px'}} fixed={logo.logo.fixed} />
               )
           }
     >
