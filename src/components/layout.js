@@ -24,12 +24,6 @@ const TemplateWrapper = ({ children }) => {
             seoMetaTags {
               ...GatsbyDatoCmsSeoMetaTags
             }
-            introTextNode {
-              childMarkdownRemark {
-                html
-              }
-            }
-            copyright
           }
           allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
             edges {
@@ -52,13 +46,6 @@ const TemplateWrapper = ({ children }) => {
               <h6 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
               </h6>
-              <div
-                className="sidebar__intro"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html
-                }}
-              />
               <ul className="sidebar__menu">
                 <li>
                   <Link to="/">Home</Link>

@@ -7,21 +7,24 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allDatoCmsWork {
+        allDatoCmsEvent {
           edges {
             node {
+              heading
+              id
               slug
             }
           }
         }
       }
     `).then(result => {
-      result.data.allDatoCmsWork.edges.map(({ node: work }) => {
+      result.data.allDatoCmsEvent.edges.map(({ node: event }) => {
+        console.log(event)
         createPage({
-          path: `works/${work.slug}`,
+          path: `works/${event.slug}`,
           component: path.resolve(`./src/templates/work.js`),
           context: {
-            slug: work.slug,
+            slug: event.slug,
           },
         })
       })
