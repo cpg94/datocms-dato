@@ -10,11 +10,11 @@ const Background = ({ children }) => (
     <StaticQuery
         query={graphql`
         query BGQuery {
-            background: allDatoCmsBackgroundImage {
+            background: allDatoCmsBackgroundVideo {
               edges {
                 node {
                   id
-                  backgroundImages {
+                  backgroundVideo {
                     fluid {
                       src
                     }
