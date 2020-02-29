@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Background from "../components/Background";
-import Sidebar from '../components/Sidebar'
+import Header from "../components/Header";
 
 const Photos = ({ data: { about } }) => (
-    <Background>
-    <Sidebar />
-        <h1 style={{ fontWeight: 'bolder', color: 'red', fontSize: '80px'}}>Nothing yet boss</h1>
-    </Background>
+    <>
+    <Header />
+    <Background />
+    </>
 )
 
 export default Photos

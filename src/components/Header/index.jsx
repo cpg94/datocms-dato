@@ -1,14 +1,13 @@
 import React from 'react'
-import { StaticQuery, graphql } from "gatsby";
+import  Logo from '../Logo'
 import {
-    Container,
-    StyledLink,
-    LinkContainer
-} from './Sidebar.css'
-import Logo from '../Logo'
+	Container,
+	StyledLink
+} from './Header.css'
+import { StaticQuery, graphql } from 'gatsby'
 
-const Sidebar = ({ sidebar }) => console.log({ sidebar }) || (
-    <StaticQuery
+const Header =  () => (
+	    <StaticQuery
         query={graphql`
         query SidebarQuery {
             sidebar: allDatoCmsSidebar {
@@ -21,16 +20,19 @@ const Sidebar = ({ sidebar }) => console.log({ sidebar }) || (
             }
           }  
         `}
-          render={(data) => (
+          render={(data) => console.log({ data }) || (
               <Container>
-                  <Logo />
-                  <LinkContainer>
+              		<div style={{ display: 'flex', alignItems: 'center' }}>
+                  		<Logo />
+              			<h1 style={{ marginLeft: '10px', fontFamily: 'Asap', fontWeight: 'bolder'}}>DIMENSION</h1>
+              		</div>
+                  <div>
                   {data.sidebar.edges.map(({ node }) => (
                       <StyledLink to={node.link}>
                           {node.linkText}
                       </StyledLink>
                   ))}
-                  </LinkContainer>
+                  </div>
               </Container>)
           }
     >
@@ -38,4 +40,4 @@ const Sidebar = ({ sidebar }) => console.log({ sidebar }) || (
 )
 
 
-export default Sidebar
+export default Header

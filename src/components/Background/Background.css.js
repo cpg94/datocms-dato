@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: ${({ src }) => `url("${src}")`}
-`
+position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 100vh;
+  z-index:-1;
+ /* to edit the grayscale effect edit the percentage below in your code*/
+  filter:grayscale(100%);`

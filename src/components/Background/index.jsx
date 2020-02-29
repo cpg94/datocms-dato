@@ -24,9 +24,11 @@ const Background = ({ children }) => (
             }
           }
           `}
-          render={({ background }) => (
-            <Container src={get(sample(get(background, 'edges.[0].node.backgroundImages')), 'fluid.src', '')}>
-                {children}
+          render={({ background }) => console.log(background) || (
+            <Container>
+            <video muted={true} autoPlay={true} loop={true} style={{ 'filter': 'greyscale(100%)'}}>
+                <source src={"https://www.datocms-assets.com/21260/1582982187-getfvid163741674298070938.mp4"} type="video/mp4" />
+            </video>
             </Container>
           )}
     />

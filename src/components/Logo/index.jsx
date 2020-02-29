@@ -18,7 +18,7 @@ const Logo = ({ logo }) => console.log({ logo }) || (
            
         `}
           render={({ logo }) => (
-                <Img style={{ marginBottom: '20px'}} fixed={logo.logo.fixed} />
+                <Img fixed={logo.logo.fixed} />
               )
           }
     >

@@ -1,32 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Background from '../components/Background'
-import Sidebar from '../components/Sidebar'
+import Header from '../components/Header'
 import '../styles/index.sass'
 // import Img from 'gatsby-image'
 
-const IndexPage = ({ data }) => (
-  <Background>
-    <Sidebar />
+const IndexPage = () => (
+  <div style={{ height: '100%' }}>
+    <Header />
+    <Background />
     <h1 style={{ fontWeight: 'bolder', color: 'red', fontSize: '80px'}}>Index</h1>
-
-  </Background>
+   </div>
 )
 
 export default IndexPage
-
-export const query = graphql`
-query HomeQuery {
-  allDatoCmsHome {
-    edges {
-      node {
-        promoImage {
-          fluid {
-            src
-          }
-        }
-      }
-    }
-  }
-}
-`
